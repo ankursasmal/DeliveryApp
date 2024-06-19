@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+ table tr td{
+    border: 2px solid black;
+    border: collapse;
+    padding: 8px;
+ }
+ .foodCart a{
+font-size: 2vw;
+font-weight: 500;
+  }
