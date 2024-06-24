@@ -8,6 +8,7 @@ const PASSWORD1 = encodeURIComponent(PASSWORD);
 
 let connection=mongoose.connect(`mongodb+srv://${USERNAME1}:${PASSWORD1}@cluster0.tmodhfn.mongodb.net/DeliveryApp?retryWrites=true&w=majority&appName=Cluster0`).then(()=>{
     console.log('db connect');
+     
 }).catch((e)=>{
     console.log('db not connect',e.message)
 });

@@ -87,7 +87,7 @@ useEffect(()=>{
 </div>
 {shoplace?<ul className="px-5 py-2 shadow-lg bg-white absolute top-[8vw]  ">
   {
-    place.map((val,i)=>{
+    place?.map((val,i)=>{
       return <li key={i} className="list-none text-black border-[1.3px] cursor-pointer px-5 py-2 "   onClick={()=>{ HandelPlaceFind(val); }}>{val}</li>
     })
   }
@@ -96,7 +96,7 @@ useEffect(()=>{
        </div>
 
 <div className="my-[2vw] px-6 flex items-center justify-center flex-wrap">
-{restruentDetail.map((val,i)=>{
+{restruentDetail?.map((val,i)=>{
   return (
     // and id pass and also routing both together
     <div key={i} className="flex flex-col p-2 bg-blue-500 text-white m-4 w-[44%] cursor-pointer rounded-lg" onClick={()=>{router.push('restruentDetail/'+val.name+"?id="+val._id)}}>

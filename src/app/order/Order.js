@@ -4,7 +4,6 @@ import CustomerHeader from '../_component/CustomerHeader'
 import Footer from '../_component/Footer'
 import { Delivery_Charge, Tax } from '../cart/constant'
 import { useRouter } from 'next/navigation'
-
      function Order() {
         let router=useRouter();
         let [userAuthStorage,setuserAuthStorage]=useState(JSON.parse(localStorage.getItem('signUpuser')) && JSON.parse(localStorage.getItem('signUpuser')));

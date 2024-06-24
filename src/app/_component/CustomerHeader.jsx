@@ -4,16 +4,27 @@ import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 
 function CushrefmerHeader(props) {
-let UserSignUpData=JSON.parse(localStorage.getItem('signUpuser')) && JSON.parse(localStorage.getItem('signUpuser'));
+
+// let UserSignUpData=JSON.parse(localStorage.getItem('signUpuser')) && JSON.parse(localStorage.getItem('signUpuser'))   ;
 let router=useRouter();
 // console.log(UserSignUpData)
 
 
   // Initialize cart from localStorage or default to an empty array
-  let initialCart = JSON.parse(localStorage.getItem('cart')) || [];
+  let initialCart=[];
   let [cartItems, setCartItems] = useState(initialCart);
-  let [cartNo, setCartNo] = useState(initialCart.length);
-let [userSignup,setuserSignup]=useState(UserSignUpData?UserSignUpData:undefined )
+  let [cartNo, setCartNo] = useState(initialCart?.length || 0);
+let [userSignup,setUserSignup]=useState(null)
+
+useEffect(()=>{
+    initialCart = JSON.parse(localStorage.getItem('cart')) || [];
+
+},[initialCart])
+
+useEffect(() => {
+  const storedUserSignup = JSON.parse(localStorage.getItem('signUpuser'));
+  setUserSignup(storedUserSignup);
+}, []); 
 
   // for add cart items
   useEffect(() => {

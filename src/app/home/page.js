@@ -1,7 +1,7 @@
 "use client" 
 import React, { useState } from "react"
-import Login from "../_component/login"
-import Signup from "../_component/signup"
+import Login from "../_component/Login.jsx"
+import Signup from "../_component/Signup"
 function page() {
 let [see,setsee]=useState(true);
   return (
