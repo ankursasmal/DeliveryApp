@@ -11,15 +11,10 @@ let router=useRouter();
 
 
   // Initialize cart from localStorage or default to an empty array
-  let initialCart=[];
+  let initialCart = JSON.parse(localStorage.getItem('cart')) || [];
   let [cartItems, setCartItems] = useState(initialCart);
-  let [cartNo, setCartNo] = useState(initialCart?.length || 0);
+  let [cartNo, setCartNo] = useState(initialCart.length);
 let [userSignup,setUserSignup]=useState(null)
-
-useEffect(()=>{
-    initialCart = JSON.parse(localStorage.getItem('cart')) || [];
-
-},[initialCart])
 
 useEffect(() => {
   const storedUserSignup = JSON.parse(localStorage.getItem('signUpuser'));
