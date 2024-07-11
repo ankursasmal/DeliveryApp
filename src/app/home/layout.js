@@ -1,13 +1,13 @@
 import Footer from "../_component/Footer";
 import Header from "../_component/Header";
-import head from "next/head";
+import Head from "next/head";
  
 export default function Layout({ children }) {
   return (
     <>
-    <head>
+    <Head>
         <title>DeliveyApp</title>
-      </head>
+      </Head>
       <Header/>
       <main>{children}</main>
       <Footer />

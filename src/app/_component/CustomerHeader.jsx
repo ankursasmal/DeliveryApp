@@ -82,24 +82,24 @@ const handelLogout=()=>{
 }
 
   return (
-    <div className='flex items-center justify-between flex-wrap py-2.5  bg-slate-500 text-white px-2'>
+    <div className='flex items-center justify-between flex-wrap fixed top-0 left-0 py-[1vw]  bg-slate-500 text-white px-2 w-[100%]'>
       <Link href="/" className='text-2vw md:text-1.6vw font-bold'>Home</Link>
+ <div> 
  {userSignup?<> 
-      <Link href='/myprofile' className='text-orange-400 text-1.3vw md:text-1.4vw'> {userSignup.name}</Link>
+      <Link href='/myprofile' className='text-orange-400 text-1.3vw md:text-1.4vw ml-[2vw] h-5 w-5 bg-blue-600 rounded-full flex items-center justify-center '> {userSignup.name[0].toUpperCase()}</Link>
 
-      <button  type='button' className='text-red-300 text-1.3vw md:text-1.4vw' onClick={handelLogout} >LogOut</button>
+      <button  type='button' className='text-red-300 text-1.3vw md:text-1. ml-[2vw]' onClick={handelLogout} >LogOut</button>
 </>:
 <>
-<Link href="/homelogin" className=' text-1.3vw md:text-1.3vw'>Login</Link>
-      <Link href="/signup" className='text-1.3vw md:text-1.4vw'>SignUp</Link>
+       <Link href="/signup" className='text-1.3vw md:text-1.4vw ml-[2vw]'>SignUp</Link>
 </>
 
 }
       
-      <Link href={cartNo?"/cart":"#"} className='text-1.3vw md:text-1.4vw'>Cart({cartNo ? cartNo : 0})</Link>
-      <Link href="/home" className='text-1.3vw md:text-1.4vw'>Add restruent</Link>
-      <Link href='/deliveryPatner' className='text-1.3vw md:text-1.4vw'>Delivery Patner</Link>
-
+{userSignup ?<Link href={cartNo?"/cart":"#"} className='text-1.3vw md:text-1.4vw ml-[2vw]'>Cart({cartNo ? cartNo : 0})</Link>:null}
+      <Link href="/home" className='text-1.3vw md:text-1.4vw ml-[2vw]'>Add restruent</Link>
+      <Link href='/deliveryPatner' className='text-1.3vw md:text-1.4vw ml-[2vw]'>Delivery Patner</Link>
+</div>
     </div>
   )
 }
